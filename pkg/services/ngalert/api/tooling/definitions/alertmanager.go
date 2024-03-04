@@ -252,10 +252,11 @@ type (
 	PostableApiAlertingConfig = definition.PostableApiAlertingConfig
 	RawMessage                = definition.RawMessage
 	Provenance                = definition.Provenance
-	ObjectMatchers            = definition.ObjectMatchers
-	PostableApiReceiver       = definition.PostableApiReceiver
-	PostableGrafanaReceivers  = definition.PostableGrafanaReceivers
-	ReceiverType              = definition.ReceiverType
+	// swagger:ignore
+	ObjectMatchers           = definition.ObjectMatchers
+	PostableApiReceiver      = definition.PostableApiReceiver
+	PostableGrafanaReceivers = definition.PostableGrafanaReceivers
+	ReceiverType             = definition.ReceiverType
 )
 
 const (
