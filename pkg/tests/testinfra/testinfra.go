@@ -357,7 +357,7 @@ func CreateGrafDir(t *testing.T, opts ...GrafanaOpts) (string, string) {
 			require.NoError(t, err)
 
 			if o.APIServerStorageType == "file" {
-				_, err = section.NewKey("storage_path", filepath.Join(os.TempDir(), "grafana-apiserver"))
+				_, err = section.NewKey("storage_path", filepath.Join("data", "grafana-apiserver"))
 				require.NoError(t, err)
 			}
 

@@ -25,7 +25,6 @@ type RESTOptionsGetter struct {
 func NewRESTOptionsGetter(path string,
 	originalStorageConfig storagebackend.Config,
 	createResourceDirs ...string) (*RESTOptionsGetter, error) {
-
 	if err := initializeDirs(path, createResourceDirs); err != nil {
 		return nil, err
 	}
