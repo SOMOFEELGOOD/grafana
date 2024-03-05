@@ -31,7 +31,8 @@ func NewStorageOptions() *StorageOptions {
 
 func (o *StorageOptions) AddFlags(fs *pflag.FlagSet) {
 	fs.StringVar((*string)(&o.StorageType), "grafana-apiserver-storage-type", string(o.StorageType), "Storage type")
-	fs.StringVar(&o.DataPath, "grafana-apiserver-storage-path", o.DataPath, "Storage path for file storage")
+	// TODO: enabling below while syntatically correct makes integration tests fail
+	// fs.StringVar(&o.DataPath, "grafana-apiserver-storage-path", o.DataPath, "Storage path for file storage")
 }
 
 func (o *StorageOptions) Validate() []error {
