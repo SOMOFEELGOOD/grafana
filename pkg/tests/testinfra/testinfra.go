@@ -356,6 +356,9 @@ func CreateGrafDir(t *testing.T, opts ...GrafanaOpts) (string, string) {
 			_, err = section.NewKey("storage_type", o.APIServerStorageType)
 			require.NoError(t, err)
 
+			_, err = section.NewKey("storage_path", o.APIServerStoragePath)
+			require.NoError(t, err)
+
 			// Hardcoded local etcd until this is needed to run in CI
 			if o.APIServerStorageType == "etcd" {
 				_, err = section.NewKey("etcd_servers", "localhost:2379")
@@ -429,6 +432,7 @@ type GrafanaOpts struct {
 	GRPCServerAddress                     string
 	QueryRetries                          int64
 	APIServerStorageType                  string
+	APIServerStoragePath                  string
 }
 
 func CreateUser(t *testing.T, store *sqlstore.SQLStore, cmd user.CreateUserCommand) *user.User {
