@@ -3,7 +3,6 @@
 package file
 
 import (
-	"os"
 	"path/filepath"
 	"time"
 
@@ -26,9 +25,6 @@ type RESTOptionsGetter struct {
 func NewRESTOptionsGetter(path string,
 	originalStorageConfig storagebackend.Config,
 	createResourceDirs ...string) (*RESTOptionsGetter, error) {
-	if path == "" {
-		path = filepath.Join(os.TempDir(), "grafana-apiserver")
-	}
 
 	if err := initializeDirs(path, createResourceDirs); err != nil {
 		return nil, err
